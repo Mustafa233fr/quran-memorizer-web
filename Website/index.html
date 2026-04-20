@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار القرآن الكريم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🕋 اختبار القرآن الكريم 🕋</h1>
+        
+        <div id="loading">جاري تحميل بيانات المصحف...</div>
+
+        <div id="quiz-section" style="display: none;">
+            <div class="ayah-display">
+                <p id="ayah-text">✨ ... ✨</p>
+            </div>
+
+            <div class="questions">
+                <div class="input-group">
+                    <label>1. ما اسم هذه السورة؟</label>
+                    <input type="text" id="q-surah" placeholder="أدخل اسم السورة">
+                </div>
+                <div class="input-group">
+                    <label>2. ما السورة السابقة؟</label>
+                    <input type="text" id="q-prev" placeholder="أدخل السورة السابقة">
+                </div>
+                <div class="input-group">
+                    <label>3. ما السورة التالية؟</label>
+                    <input type="text" id="q-next" placeholder="أدخل السورة التالية">
+                </div>
+                <div class="input-group">
+                    <label>4. ما الآية التالية؟</label>
+                    <textarea id="q-ayah" rows="3" placeholder="أدخل الآية التالية..."></textarea>
+                </div>
+            </div>
+
+            <button id="submit-btn" onclick="checkAnswers()">تحقق من الإجابات</button>
+            <button id="next-btn" onclick="generateQuestion()" style="display: none;">سؤال جديد</button>
+            
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
