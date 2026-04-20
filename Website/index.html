@@ -8,40 +8,59 @@
 </head>
 <body>
     <div class="container">
-        <h1>🕋 اختبار القرآن الكريم 🕋</h1>
+    <h1 id="main-title">🕋 اختبار آية عشوائية 🕋</h1>
+    
+    <div id="loading">جاري تحميل بيانات المصحف...</div>
+
+    <div id="quiz-section" style="display: none;">
         
-        <div id="loading">جاري تحميل بيانات المصحف...</div>
-
-        <div id="quiz-section" style="display: none;">
-            <div class="ayah-display">
-                <p id="ayah-text">✨ ... ✨</p>
-            </div>
-
-            <div class="questions">
-                <div class="input-group">
-                    <label>1. ما اسم هذه السورة؟</label>
-                    <input type="text" id="q-surah" placeholder="أدخل اسم السورة">
-                </div>
-                <div class="input-group">
-                    <label>2. ما السورة السابقة؟</label>
-                    <input type="text" id="q-prev" placeholder="أدخل السورة السابقة">
-                </div>
-                <div class="input-group">
-                    <label>3. ما السورة التالية؟</label>
-                    <input type="text" id="q-next" placeholder="أدخل السورة التالية">
-                </div>
-                <div class="input-group">
-                    <label>4. ما الآية التالية؟</label>
-                    <textarea id="q-ayah" rows="3" placeholder="أدخل الآية التالية..."></textarea>
-                </div>
-            </div>
-
-            <button id="submit-btn" onclick="checkAnswers()">تحقق من الإجابات</button>
-            <button id="next-btn" onclick="generateQuestion()" style="display: none;">سؤال جديد</button>
-            
-            <div id="results"></div>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchMode('random', this)">آية عشوائية</button>
+            <button class="tab-btn" onclick="switchMode('page', this)">تحديد صفحة</button>
+            <button class="tab-btn" onclick="switchMode('surah', this)">تحديد سورة</button>
         </div>
+
+        <div id="controls-page" class="controls" style="display: none;">
+            <input type="number" id="page-start" min="1" max="604" placeholder="من صفحة (مثال: 1)">
+            <span>إلى</span>
+            <input type="number" id="page-end" min="1" max="604" placeholder="إلى صفحة (مثال: 10)">
+        </div>
+
+        <div id="controls-surah" class="controls" style="display: none;">
+            <select id="surah-select">
+                </select>
+        </div>
+
+        <div class="ayah-display">
+            <button id="refresh-ayah-btn" onclick="generateQuestion()" title="تغيير الآية">🔄</button>
+            <p id="ayah-text">✨ ... ✨</p>
+        </div>
+
+        <div class="questions">
+            <div class="input-group" id="q1-container">
+                <label>1. ما اسم هذه السورة؟</label>
+                <input type="text" id="q-surah" placeholder="أدخل اسم السورة">
+            </div>
+            <div class="input-group" id="q2-container">
+                <label>2. ما السورة السابقة؟</label>
+                <input type="text" id="q-prev" placeholder="أدخل السورة السابقة">
+            </div>
+            <div class="input-group" id="q3-container">
+                <label>3. ما السورة التالية؟</label>
+                <input type="text" id="q-next" placeholder="أدخل السورة التالية">
+            </div>
+            <div class="input-group" id="q4-container">
+                <label>4. ما الآية التالية؟</label>
+                <textarea id="q-ayah" rows="2" placeholder="أدخل الآية التالية..."></textarea>
+            </div>
+        </div>
+
+        <button id="submit-btn" onclick="checkAnswers()">تحقق من الإجابات</button>
+        <button id="next-btn" onclick="generateQuestion()" style="display: none;">سؤال جديد</button>
+        
+        <div id="results"></div>
     </div>
+</div>
 
     <script src="script.js"></script>
 </body>

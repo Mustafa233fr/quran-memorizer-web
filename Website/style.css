@@ -74,3 +74,85 @@ button:hover {
 
 .correct { color: #27ae60; }
 .incorrect { color: #c0392b; }
+
+/* Tab Styles */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: #eef5f9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    color: #555;
+    margin-top: 0;
+    border-radius: 0;
+    padding: 10px;
+    font-weight: bold;
+    border-left: 1px solid #ddd;
+}
+
+.tab-btn:last-child {
+    border-left: none;
+}
+
+.tab-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #d5e4ec;
+}
+
+/* Controls Styles */
+.controls {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls input, .controls select {
+    width: 45%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+/* Refresh Button Layout */
+.ayah-display {
+    position: relative; /* Allows absolute positioning inside */
+}
+
+#refresh-ayah-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin: 0;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#refresh-ayah-btn:hover {
+    background: #f0f0f0;
+    transform: rotate(180deg);
+}
+
+textarea {
+    resize: none;
+}
