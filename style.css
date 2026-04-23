@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Kitab";
+    src: url("fonts/kitab.ttf");
+}
+
 /* Color Palette Variables */
 :root {
     /* Dark Mode (Default) */
@@ -11,7 +16,7 @@
     --accent-color: #4a90e2;
     --correct-color: #45d07a;
     --incorrect-color: #ff5e5e;
-    --shadow: 0 4px 15px rgba(0,0,0,0.5);
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] {
@@ -27,11 +32,11 @@
     --accent-color: #2c3e50;
     --correct-color: #27ae60;
     --incorrect-color: #c0392b;
-    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
@@ -91,7 +96,10 @@ body {
 }
 
 /* Input & Textarea styling */
-input[type="text"], input[type="number"], select, textarea {
+input[type="text"],
+input[type="number"],
+select,
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--input-border);
@@ -191,7 +199,6 @@ button:hover {
     filter: none;
 }
 
-
 #results {
     margin-top: 20px;
     text-align: right;
@@ -199,8 +206,14 @@ button:hover {
     line-height: 1.6;
 }
 
-.correct { color: var(--correct-color); font-weight: bold; }
-.incorrect { color: var(--incorrect-color); font-weight: bold; }
+.correct {
+    color: var(--correct-color);
+    font-weight: bold;
+}
+.incorrect {
+    color: var(--incorrect-color);
+    font-weight: bold;
+}
 
 /* Audio Player Styles */
 .audio-controls {
