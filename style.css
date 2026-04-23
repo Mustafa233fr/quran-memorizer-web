@@ -84,6 +84,11 @@ body {
     border: 1px solid var(--input-border);
 }
 
+#ayah-text {
+    font-family: "Kitab";
+    font-weight: normal;
+}
+
 .input-group {
     margin-bottom: 15px;
     text-align: right;
