@@ -1,0 +1,238 @@
+/* Color Palette Variables */
+:root {
+    /* Dark Mode (Default) */
+    --bg-color: #1a1a1b;
+    --container-bg: #2d2d2e;
+    --text-color: #e2e2e2;
+    --input-bg: #3e3e3f;
+    --input-border: #555;
+    --tab-inactive-bg: #3e3e3f;
+    --tab-text: #bbb;
+    --accent-color: #4a90e2;
+    --correct-color: #45d07a;
+    --incorrect-color: #ff5e5e;
+    --shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+[data-theme="light"] {
+    /* Light Mode */
+    --bg-color: #f4f7f6;
+    --container-bg: #ffffff;
+    --refresh-hover-bg: #d6dbe0;
+    --text-color: #333;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --tab-inactive-bg: #eef5f9;
+    --tab-text: #555;
+    --accent-color: #2c3e50;
+    --correct-color: #27ae60;
+    --incorrect-color: #c0392b;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    direction: rtl;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background: var(--container-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--tab-inactive-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 0; /* Reset global button margin */
+}
+
+.ayah-display {
+    background-color: var(--tab-inactive-bg);
+    padding: 45px 20px 20px 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    position: relative;
+    border: 1px solid var(--input-border);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input & Textarea styling */
+input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+textarea {
+    resize: none;
+    height: 80px; /* Give the ayah area a clean fixed height */
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+/* Tab Styles - FIXED */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: var(--tab-inactive-bg);
+    border-radius: 8px;
+    overflow: hidden; /* Clips the child buttons to the rounded corners */
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    color: var(--tab-text);
+    margin-top: 0; /* Important */
+    border-radius: 0 !important; /* Forces it to fill the square space */
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-left: 1px solid var(--input-border);
+}
+
+.tab-btn:last-child {
+    border-left: none;
+}
+
+.tab-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(128, 128, 128, 0.2);
+}
+
+/* Controls Styles */
+.controls {
+    background: var(--input-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--input-border);
+}
+
+#refresh-ayah-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--tab-inactive-bg);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin: 0;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+#refresh-ayah-btn:hover {
+    background-color: var(--input-border);
+    filter: none;
+}
+
+
+#results {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.correct { color: var(--correct-color); font-weight: bold; }
+.incorrect { color: var(--incorrect-color); font-weight: bold; }
+
+/* Audio Player Styles */
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--input-border);
+}
+
+.audio-controls select {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.audio-controls button {
+    margin-top: 0;
+    padding: 8px 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--tab-inactive-bg);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    transition: background-color 0.2 ease;
+}
+
+.audio-controls button:hover {
+    background-color: var(--input-border);
+    filter: none;
+}
