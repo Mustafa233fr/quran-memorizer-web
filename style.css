@@ -231,6 +231,7 @@ button:hover {
 /* Audio Player Styles */
 .audio-controls {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -264,4 +265,33 @@ button:hover {
 .audio-controls button:hover {
     background-color: var(--input-border);
     filter: none;
+}
+
+@media (max-width: 450px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    #submit-btn {
+        width: 100%;
+    }
+
+    .audio-controls {
+        flex-direction: column;
+    }
+
+    .audio-controls select,
+    .audio-controls button {
+        width: 100%;
+    }
 }
