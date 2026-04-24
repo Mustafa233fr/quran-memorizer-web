@@ -1,0 +1,182 @@
+<!doctype html>
+<html
+    lang="ar"
+    dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>اختبار القرآن الكريم</title>
+        <link
+            rel="stylesheet"
+            href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <button
+                id="theme-toggle"
+                onclick="toggleTheme()"
+                title="تغيير المظهر">
+                <i data-lucide="moon"></i>
+            </button>
+            <h1 id="main-title">اختبار آية عشوائية</h1>
+
+            <div id="loading">جارٍ تحميل آيات المصحف...</div>
+
+            <div
+                id="quiz-section"
+                style="display: none">
+                <div class="tabs">
+                    <button
+                        class="tab-btn active"
+                        onclick="switchMode('random', this)">
+                        آية عشوائية
+                    </button>
+                    <button
+                        class="tab-btn"
+                        onclick="switchMode('page', this)">
+                        تحديد صفحة
+                    </button>
+                    <button
+                        class="tab-btn"
+                        onclick="switchMode('surah', this)">
+                        تحديد سورة
+                    </button>
+                </div>
+
+                <div
+                    id="controls-page"
+                    class="controls"
+                    style="display: none">
+                    <input
+                        type="number"
+                        id="page-start"
+                        min="1"
+                        max="604"
+                        placeholder="من صفحة (مثال: 1)" />
+                    <span>إلى</span>
+                    <input
+                        type="number"
+                        id="page-end"
+                        min="1"
+                        max="604"
+                        placeholder="إلى صفحة (مثال: 10)" />
+                </div>
+
+                <div
+                    id="controls-surah"
+                    class="controls"
+                    style="display: none">
+                    <select id="surah-select"></select>
+                </div>
+
+                <div class="ayah-display">
+                    <button
+                        id="refresh-ayah-btn"
+                        onclick="generateQuestion()"
+                        title="آية جديدة">
+                        <i
+                            data-lucide="skip-forward"
+                            width="16"
+                            height="16"></i>
+                    </button>
+                    <div id="ayah-text">جارٍ تحميل الآية...</div>
+
+                    <div class="audio-controls">
+                        <select id="sheikh-select">
+                            <option value="Alafasy_128kbps">
+                                مشاري العفاسي
+                            </option>
+                            <option value="Husary_128kbps">
+                                محمود خليل الحصري
+                            </option>
+                            <option value="Abdul_Basit_Murattal_192kbps">
+                                عبد الباسط عبد الصمد
+                            </option>
+                            <option value="Yasser_Ad-Dussary_128kbps">
+                                ياسر الدوسري
+                            </option>
+                            <option value="Minshawi_Murattal_128kbps">
+                                محمد صديق المنشاوي
+                            </option>
+                            <option value="MaherAlMuaiqly128kbps">
+                                ماهر المعيقلي
+                            </option>
+                            <option value="Abdurrahmaan_As-Sudais_192kbps">
+                                عبدالرحمن السديس
+                            </option>
+                        </select>
+                        <button
+                            id="play-btn"
+                            onclick="playAyahAudio()">
+                            <i data-lucide="play"></i>
+                        </button>
+                        <audio
+                            id="ayah-audio"
+                            style="display: none"></audio>
+                    </div>
+                </div>
+
+                <div class="questions">
+                    <div
+                        class="input-group"
+                        id="q1-container">
+                        <label>1. في أي سورة توجد هذه الآية؟</label>
+                        <input
+                            type="text"
+                            id="q-surah"
+                            placeholder="أدخل اسم السورة" />
+                    </div>
+                    <div
+                        class="input-group"
+                        id="q2-container">
+                        <label>2. ما السورة السابقة؟</label>
+                        <input
+                            type="text"
+                            id="q-prev"
+                            placeholder="أدخل السورة السابقة" />
+                    </div>
+                    <div
+                        class="input-group"
+                        id="q3-container">
+                        <label>3. ما السورة التالية؟</label>
+                        <input
+                            type="text"
+                            id="q-next"
+                            placeholder="أدخل السورة التالية" />
+                    </div>
+                    <div
+                        class="input-group"
+                        id="q4-container">
+                        <label>4. ما الآية التالية؟</label>
+                        <textarea
+                            id="q-ayah"
+                            rows="2"
+                            placeholder="أدخل الآية التالية..."></textarea>
+                    </div>
+                </div>
+
+                <button
+                    id="submit-btn"
+                    onclick="checkAnswers()">
+                    تحقق من الإجابات
+                </button>
+                <button
+                    id="next-btn"
+                    onclick="generateQuestion()"
+                    style="display: none">
+                    سؤال جديد
+                </button>
+
+                <div id="results"></div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
