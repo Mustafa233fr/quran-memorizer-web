@@ -13,7 +13,7 @@
     --input-border: #555;
     --tab-inactive-bg: #3e3e3f;
     --tab-text: #bbb;
-    --accent-color: #4a90e2;
+    --accent-color: oklch(0.55 0.2114 138);
     --correct-color: #45d07a;
     --incorrect-color: #ff5e5e;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
