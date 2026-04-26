@@ -37,3 +37,4 @@ https://mustafa233fr.github.io/quran-memorizer-web/
 ## 🙏 Credits
 
 Special thanks to **Abdullah Mohamed Riad** for improving the project's user interface (UI).
+https://github.com/AbdullahMRiad
