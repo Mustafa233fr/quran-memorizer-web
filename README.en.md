@@ -14,6 +14,10 @@ A simple web app to help memorize and test knowledge of the Quran.
 * 🔊 Audio playback from different reciters
 * 🌙 Dark / Light mode toggle
 
+## 🔗 Live Website
+
+https://mustafa233fr.github.io/quran-memorizer-web/
+
 
 ## Tech Stack
 
@@ -27,3 +31,9 @@ A simple web app to help memorize and test knowledge of the Quran.
 2. Choose a mode
 3. Answer the questions
 4. Check your results
+
+   
+
+## 🙏 Credits
+
+Special thanks to **Abdullah Mohamed Riad** for improving the project's user interface (UI).
