@@ -35,3 +35,4 @@ https://mustafa233fr.github.io/quran-memorizer-web/
 ## 🙏 شكر وتقدير
 
 شكر خاص لـ **عبدالله محمد رياض** على تحسين تصميم واجهة المستخدم (UI) للمشروع.
+https://github.com/AbdullahMRiad
